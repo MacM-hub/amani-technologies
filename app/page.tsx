@@ -87,7 +87,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Droite — carte mission sombre */}
+          {/* Droite — carte profil équipe */}
           <div
             className="rounded-2xl p-8 text-white shadow-2xl"
             style={{ background: "linear-gradient(145deg, #0f172a 0%, #1e3a5f 100%)" }}
@@ -95,32 +95,33 @@ export default function Home() {
             <div className="flex items-center gap-2 mb-6">
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">
-                Mission en cours
+                Notre équipe
               </span>
             </div>
 
-            <h3 className="text-xl font-semibold mb-1">Plateforme Data & BI</h3>
-            <p className="text-sm text-gray-400 mb-6">Banque régionale · Afrique de l&apos;Ouest</p>
+            <h3 className="text-xl font-semibold mb-1">Une expertise forgée sur le terrain</h3>
+            <p className="text-sm text-gray-400 mb-6">
+              Consultants seniors avec des parcours dans de grandes organisations africaines et internationales.
+            </p>
 
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="space-y-3 mb-6">
               {[
-                { label: "Sources intégrées", value: "12" },
-                { label: "Dashboards livrés", value: "8" },
-                { label: "Réduction du temps de reporting", value: "−70%" },
-                { label: "Conformité réglementaire", value: "100%" },
-              ].map((kpi) => (
-                <div key={kpi.label} className="bg-white/5 rounded-xl p-4">
-                  <p className="text-2xl font-bold text-white">{kpi.value}</p>
-                  <p className="text-xs text-gray-400 mt-1">{kpi.label}</p>
+                { domain: "Architecture & Systèmes d'information", years: "10+ ans" },
+                { domain: "Business Intelligence & Data", years: "8+ ans" },
+                { domain: "Audit & Cybersécurité", years: "7+ ans" },
+              ].map((item) => (
+                <div key={item.domain} className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-3">
+                  <span className="text-sm text-gray-300">{item.domain}</span>
+                  <span className="text-xs font-semibold text-emerald-400 ml-4 shrink-0">{item.years}</span>
                 </div>
               ))}
             </div>
 
             <div className="border-t border-white/10 pt-5 space-y-2">
               {[
-                "Architecture data warehouse multi-sources",
-                "Pipelines ETL temps réel",
-                "Sécurisation & conformité BCEAO",
+                "Banques & institutions financières",
+                "Administrations publiques",
+                "Projets financés par bailleurs internationaux",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-gray-300">
                   <span className="text-emerald-400">✓</span>
@@ -137,10 +138,10 @@ export default function Home() {
       <section className="border-y border-gray-100 py-12 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "10+", label: "Années d'expérience" },
-            { value: "20+", label: "Missions réalisées" },
-            { value: "8", label: "Pays en Afrique" },
+            { value: "15+", label: "Ans d'expérience cumulée" },
             { value: "3", label: "Domaines d'expertise" },
+            { value: "5+", label: "Pays maîtrisés en Afrique" },
+            { value: "100%", label: "Engagés sur chaque mission" },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
@@ -337,27 +338,29 @@ export default function Home() {
               Pourquoi Amani
             </span>
             <h2 className="text-3xl font-bold text-white mt-3">
-              Un partenaire stratégique ancré en Afrique
+              Une structure nouvelle, une équipe expérimentée
             </h2>
             <p className="text-gray-400 mt-4 leading-relaxed">
-              Expertise internationale, présence terrain, connaissance des réalités locales.
-              Nous constituons des consortiums et répondons aux appels d&apos;offres publics et privés.
+              Amani Technologies est une ESN en démarrage, portée par des consultants seniors
+              ayant exercé dans des banques, des institutions publiques et des projets financés
+              par des bailleurs internationaux. Pas encore de références en notre nom — mais
+              une expertise éprouvée que nous mettons au service de vos projets.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Expertise sectorielle",
-                desc: "Connaissance approfondie des enjeux des banques, administrations et utilities en Afrique subsaharienne.",
+                title: "Séniorité de l'équipe",
+                desc: "Nos consultants ont travaillé sur des projets complexes dans des contextes africains et internationaux exigeants.",
               },
               {
-                title: "Présence terrain",
-                desc: "Partenaires locaux actifs pour un accompagnement de proximité sur chaque mission.",
+                title: "Connaissance du contexte local",
+                desc: "Nous comprenons les contraintes réglementaires, organisationnelles et techniques propres à l'Afrique subsaharienne.",
               },
               {
-                title: "Réponse aux appels d'offres",
-                desc: "Expérience dans la constitution de consortiums et la rédaction de propositions techniques compétitives.",
+                title: "Approche partenariale",
+                desc: "Nous construisons des relations de long terme, pas des interventions ponctuelles. Votre réussite construit aussi la nôtre.",
               },
             ].map((card) => (
               <div
@@ -382,8 +385,9 @@ export default function Home() {
             Un projet en tête ?
           </h2>
           <p className="text-gray-500 text-lg mb-10">
-            Partagez-nous votre contexte — nous vous répondons sous 48h avec une première
-            analyse et une proposition d&apos;approche.
+            Nous sommes au début de notre aventure, et c&apos;est exactement pour ça que
+            nous cherchons des clients prêts à construire avec nous. Partagez-nous votre
+            contexte — nous vous répondons sous 48h.
           </p>
           <a
             href="mailto:contact@amani-technologies.com"
