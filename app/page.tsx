@@ -3,7 +3,7 @@ export default function Home() {
     <main className="bg-white text-gray-900">
 
       {/* HERO */}
-      <section className="relative overflow-hidden pt-28 pb-24 px-6">
+      <section className="relative overflow-hidden pt-36 pb-24 px-6">
 
         {/* fond décoratif */}
         <div
@@ -35,25 +35,7 @@ export default function Home() {
               </span>
               <br />
               Une Afrique{" "}
-              <span className="relative inline-block">
-                plus connectée.
-                <svg
-                  className="absolute -bottom-1 left-0 w-full"
-                  viewBox="0 0 200 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 6 Q50 2 100 5 Q150 8 198 4"
-                    stroke="#2563eb"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    fill="none"
-                    opacity="0.4"
-                  />
-                </svg>
-              </span>
+              <span>plus connectée.</span>
             </h1>
 
             <p className="mt-7 text-lg text-gray-500 leading-relaxed max-w-lg">
@@ -138,7 +120,7 @@ export default function Home() {
       <section className="border-y border-gray-100 py-12 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "15+", label: "Ans d'expérience cumulée" },
+            { value: "20+", label: "Ans d'expérience cumulée" },
             { value: "3", label: "Domaines d'expertise" },
             { value: "5+", label: "Pays maîtrisés en Afrique" },
             { value: "100%", label: "Engagés sur chaque mission" },
@@ -280,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* APPROCHE */}
-      <section className="py-24 px-6">
+      <section id="approche" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-14">
             <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
