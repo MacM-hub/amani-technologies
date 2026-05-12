@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -13,10 +14,17 @@ export default function Navbar() {
 
   return (
     <nav className="w-full fixed top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-2">
 
-        <a href="#" className="font-bold text-lg tracking-tight text-gray-900">
-          Amani Technologies
+        <a href="#" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Amani Technologies"
+            width={200}
+            height={66}
+            className="h-16 w-auto object-contain"
+            priority
+          />
         </a>
 
         {/* Liens desktop */}

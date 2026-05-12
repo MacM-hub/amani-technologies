@@ -323,10 +323,9 @@ export default function Home() {
               Une structure nouvelle, une équipe expérimentée
             </h2>
             <p className="text-gray-400 mt-4 leading-relaxed">
-              Amani Technologies est une ESN en démarrage, portée par des consultants seniors
+              Amani Technologies est une ESN portée par des consultants seniors
               ayant exercé dans des banques, des institutions publiques et des projets financés
-              par des bailleurs internationaux. Pas encore de références en notre nom — mais
-              une expertise éprouvée que nous mettons au service de vos projets.
+              par des bailleurs internationaux.
             </p>
           </div>
 
@@ -338,7 +337,7 @@ export default function Home() {
               },
               {
                 title: "Connaissance du contexte local",
-                desc: "Nous comprenons les contraintes réglementaires, organisationnelles et techniques propres à l'Afrique subsaharienne.",
+                desc: "Nous comprenons les contraintes réglementaires, organisationnelles et techniques propres à l'Afrique.",
               },
               {
                 title: "Approche partenariale",

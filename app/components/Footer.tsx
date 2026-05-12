@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -7,9 +9,15 @@ export default function Footer() {
 
         {/* Identité */}
         <div>
-          <p className="font-bold text-gray-900 text-lg mb-2">Amani Technologies</p>
+          <Image
+            src="/logo-trimmed.png"
+            alt="Amani Technologies"
+            width={160}
+            height={123}
+            className="h-12 w-auto object-contain mb-2"
+          />
           <p className="text-sm text-gray-500 leading-relaxed">
-            Cabinet de conseil en transformation numérique des institutions africaines.
+            Cabinet de conseil en transformation numérique.
           </p>
         </div>
 
