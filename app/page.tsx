@@ -1,3 +1,22 @@
+import Team from "./components/Team"
+
+// TODO: remplacer par les vraies URL des brochures (à déposer dans /public)
+const BROCHURE_IA = "/brochure-formation-ia.pdf"
+const BROCHURE_CYBER = "/brochure-formation-cybersecurite.pdf"
+const BROCHURES_PRETES = false
+
+const MAIL = "contact@amani-technologies.com"
+const MAILTO_ECHANGE = `mailto:${MAIL}?subject=${encodeURIComponent(
+  "Échange 30 min — [votre organisation]"
+)}&body=${encodeURIComponent(
+  "Bonjour,\n\nNous souhaitons échanger 30 minutes sur notre besoin.\n\nOrganisation :\nContexte en quelques lignes :\nDisponibilités :\n\nMerci."
+)}`
+const MAILTO_DIAGNOSTIC = `mailto:${MAIL}?subject=${encodeURIComponent(
+  "Demande de diagnostic exploratoire"
+)}&body=${encodeURIComponent(
+  "Bonjour,\n\nNous souhaitons un diagnostic exploratoire.\n\nOrganisation :\nPérimètre envisagé (IA, cybersécurité, SI) :\n\nMerci."
+)}`
+
 export default function Home() {
   return (
     <main className="bg-white text-gray-900">
@@ -19,11 +38,11 @@ export default function Home() {
           {/* Gauche */}
           <div>
             <span className="inline-block text-xs font-semibold tracking-widest text-blue-600 uppercase mb-6">
-              Cabinet de conseil · Afrique
+              Conseil · IA, cybersécurité &amp; systèmes d&apos;information · Afrique
             </span>
 
             <h1 className="text-4xl md:text-[52px] font-bold leading-[1.1] tracking-tight text-gray-900">
-              Des systèmes critiques{" "}
+              Adoptez l&apos;IA, sécurisez vos activités et{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #2563eb 0%, #059669 100%)",
@@ -31,21 +50,20 @@ export default function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                plus solides.
+                modernisez vos systèmes d&apos;information.
               </span>
-              <br />
-              Une Afrique{" "}
-              <span>plus connectée.</span>
             </h1>
 
-            <p className="mt-7 text-lg text-gray-500 leading-relaxed max-w-lg">
-              Amani Technologies accompagne les banques, institutions publiques et
-              entreprises africaines dans la transformation de leurs systèmes
-              d&apos;information — de la stratégie à la mise en production.
+            <p className="mt-7 text-lg text-gray-600 leading-relaxed max-w-lg">
+              Amani Technologies accompagne les institutions publiques, les PME et
+              les organisations financières d&apos;Afrique francophone. Commencez par
+              une formation ou un diagnostic ciblé ; nous avançons ensuite jusqu&apos;au
+              POC, à l&apos;intégration et à l&apos;accompagnement des équipes si le
+              besoin est confirmé.
             </p>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-xs text-gray-400">
-              {["Banque", "Secteur public", "Télécom", "Utilities", "PME"].map((s) => (
+            <div className="mt-5 flex flex-wrap gap-2 text-xs text-gray-500">
+              {["Institutions publiques", "PME", "Organisations financières", "Afrique francophone"].map((s) => (
                 <span key={s} className="px-3 py-1 rounded-full border border-gray-200 bg-white">
                   {s}
                 </span>
@@ -58,13 +76,13 @@ export default function Home() {
                 className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition hover:opacity-90"
                 style={{ background: "linear-gradient(135deg, #1d4ed8, #059669)" }}
               >
-                Démarrer un projet
+                Échanger 30 minutes
               </a>
               <a
-                href="#expertise"
+                href="#formations"
                 className="px-6 py-3 rounded-xl text-sm font-semibold border border-gray-200 bg-white hover:border-gray-400 transition"
               >
-                Notre expertise →
+                Découvrir nos formations →
               </a>
             </div>
           </div>
@@ -76,24 +94,25 @@ export default function Home() {
           >
             <div className="flex items-center gap-2 mb-6">
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">
+              <span className="text-xs font-medium text-gray-300 uppercase tracking-widest">
                 Notre équipe
               </span>
             </div>
 
-            <h3 className="text-xl font-semibold mb-1">Une expertise forgée sur le terrain</h3>
-            <p className="text-sm text-gray-400 mb-6">
-              Consultants seniors avec des parcours dans de grandes organisations africaines et internationales.
+            <h3 className="text-xl font-semibold mb-1">Une structure nouvelle, une équipe expérimentée</h3>
+            <p className="text-sm text-gray-300 mb-6">
+              Des consultants seniors avec des parcours dans de grandes organisations
+              africaines et internationales.
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                { domain: "Architecture & Systèmes d'information", years: "10+ ans" },
-                { domain: "Business Intelligence & Data", years: "8+ ans" },
-                { domain: "Audit & Cybersécurité", years: "7+ ans" },
+                { domain: "Architecture & systèmes d'information", years: "10+ ans" },
+                { domain: "Business Intelligence & data", years: "8+ ans" },
+                { domain: "Audit & cybersécurité", years: "7+ ans" },
               ].map((item) => (
                 <div key={item.domain} className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-3">
-                  <span className="text-sm text-gray-300">{item.domain}</span>
+                  <span className="text-sm text-gray-200">{item.domain}</span>
                   <span className="text-xs font-semibold text-emerald-400 ml-4 shrink-0">{item.years}</span>
                 </div>
               ))}
@@ -103,9 +122,9 @@ export default function Home() {
               {[
                 "Banques & institutions financières",
                 "Administrations publiques",
-                "Projets financés par bailleurs internationaux",
+                "Expériences en Afrique et à l'international",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-gray-300">
+                <div key={item} className="flex items-center gap-2 text-sm text-gray-200">
                   <span className="text-emerald-400">✓</span>
                   {item}
                 </div>
@@ -116,34 +135,150 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CHIFFRES CLÉS */}
-      <section className="border-y border-gray-100 py-12 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "20+", label: "Ans d'expérience cumulée" },
-            { value: "3", label: "Domaines d'expertise" },
-            { value: "5+", label: "Pays maîtrisés en Afrique" },
-            { value: "100%", label: "Engagés sur chaque mission" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
-              <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
-            </div>
-          ))}
+      {/* OFFRES — Commencer avec Amani */}
+      <section id="offres" className="border-y border-gray-100 py-24 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl mb-14">
+            <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
+              Commencer avec Amani
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mt-3">
+              Trois offres indépendantes
+            </h2>
+            <p className="text-gray-600 mt-3">
+              Vous choisissez le point d&apos;entrée adapté à votre besoin — chacune se
+              suffit à elle-même.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                n: "01",
+                title: "Formation & sensibilisation",
+                desc: "Formations IA et cybersécurité de niveau 1, pour dirigeants et équipes. Format atelier, sur site ou à distance.",
+                href: "#formations",
+                cta: "Voir les programmes",
+              },
+              {
+                n: "02",
+                title: "Diagnostic ciblé",
+                desc: "Identification des processus à améliorer, des risques et des cas d'usage IA prioritaires. Restitution avec des recommandations activables.",
+                href: MAILTO_DIAGNOSTIC,
+                cta: "Demander un diagnostic",
+              },
+              {
+                n: "03",
+                title: "POC & mise en œuvre",
+                desc: "Prototype limité et mesurable, puis intégration et accompagnement des équipes si les résultats le justifient.",
+                href: "#contact",
+                cta: "En parler avec nous",
+              },
+            ].map((o) => (
+              <div
+                key={o.n}
+                className="flex flex-col bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition"
+              >
+                <p className="text-5xl font-black mb-4" style={{ color: "#e2e8f0", lineHeight: 1 }}>
+                  {o.n}
+                </p>
+                <h3 className="text-lg font-semibold mb-3">{o.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 grow">{o.desc}</p>
+                <a
+                  href={o.href}
+                  className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
+                >
+                  {o.cta} →
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* FORMATIONS */}
+      <section id="formations" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl mb-14">
+            <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
+              Nos formations
+            </span>
+            <h2 className="text-3xl font-bold text-gray-900 mt-3">
+              Deux formations disponibles immédiatement
+            </h2>
+            <p className="text-gray-600 mt-3">
+              Niveau 1, pensées pour des équipes non spécialistes. Elles se suffisent
+              à elles-mêmes et ne préjugent d&apos;aucune suite.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Intelligence artificielle — niveau 1",
+                desc: "Comprendre ce que l'IA générative change concrètement pour votre organisation : cas d'usage réalistes, limites, risques, premiers réflexes de gouvernance.",
+                public: "Dirigeants, cadres, équipes métier",
+                format: "Atelier ½ à 1 journée · sur site ou à distance",
+                href: BROCHURE_IA,
+              },
+              {
+                title: "Cybersécurité — niveau 1",
+                desc: "Les fondamentaux pour réduire l'exposition au risque : hygiène numérique, phishing, gestion des accès, sauvegardes, réaction en cas d'incident.",
+                public: "Dirigeants, cadres, équipes métier",
+                format: "Atelier ½ à 1 journée · sur site ou à distance",
+                href: BROCHURE_CYBER,
+              },
+            ].map((f) => (
+              <div key={f.title} className="p-8 rounded-2xl border border-gray-100 hover:shadow-md transition">
+                <h3 className="text-lg font-semibold mb-3">{f.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">{f.desc}</p>
+                <dl className="text-sm text-gray-600 space-y-1.5 mb-6">
+                  <div className="flex gap-2">
+                    <dt className="font-semibold text-gray-500 shrink-0">Public</dt>
+                    <dd>{f.public}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="font-semibold text-gray-500 shrink-0">Format</dt>
+                    <dd>{f.format}</dd>
+                  </div>
+                </dl>
+                {BROCHURES_PRETES ? (
+                  <a
+                    href={f.href}
+                    className="inline-block text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Télécharger la brochure (PDF) →
+                  </a>
+                ) : (
+                  <a
+                    href={MAILTO_ECHANGE}
+                    className="inline-block text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
+                  >
+                    Brochure détaillée sur demande →
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ÉQUIPE + RÉALISATION */}
+      <Team />
+
       {/* EXPERTISE */}
-      <section id="expertise" className="py-24 px-6">
+      <section id="expertise" className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-14">
             <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
-              Ce que nous faisons
+              Pour aller plus loin
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-3">
               Trois expertises, un seul objectif
             </h2>
-            <p className="text-gray-500 mt-3">
+            <p className="text-gray-600 mt-3">
               Structurer, sécuriser et valoriser les systèmes d&apos;information de nos clients.
             </p>
           </div>
@@ -154,7 +289,7 @@ export default function Home() {
                 icon: "◈",
                 color: "text-blue-600",
                 bg: "bg-blue-50",
-                title: "Architecture & Cloud",
+                title: "Architecture & cloud",
                 desc: "Urbanisation des SI, modernisation des architectures legacy, cloud hybride et gouvernance des systèmes critiques.",
                 tags: ["Architecture SI", "Cloud hybride", "Migration"],
               },
@@ -162,7 +297,7 @@ export default function Home() {
                 icon: "◎",
                 color: "text-emerald-600",
                 bg: "bg-emerald-50",
-                title: "Data & Intelligence artificielle",
+                title: "Data & intelligence artificielle",
                 desc: "Plateformes data, gouvernance, Business Intelligence, analytics avancé et IA au service de la décision.",
                 tags: ["Data platform", "BI", "Analytics", "IA"],
               },
@@ -172,23 +307,23 @@ export default function Home() {
                 bg: "bg-violet-50",
                 title: "Cybersécurité",
                 desc: "Audit de sécurité, gouvernance, conformité ISO 27001 et protection des infrastructures sensibles.",
-                tags: ["Audit", "ISO 27001", "SOC"],
+                tags: ["Audit", "ISO 27001", "Gouvernance"],
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-8 rounded-2xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition group"
+                className="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg hover:border-gray-200 transition"
               >
                 <div className={`w-12 h-12 ${item.bg} rounded-xl flex items-center justify-center mb-6`}>
                   <span className={`text-2xl ${item.color}`}>{item.icon}</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">{item.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">{item.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2.5 py-1 rounded-full border border-gray-200 text-gray-500"
+                      className="text-xs px-2.5 py-1 rounded-full border border-gray-200 text-gray-600"
                     >
                       {tag}
                     </span>
@@ -201,7 +336,7 @@ export default function Home() {
       </section>
 
       {/* SECTEURS */}
-      <section id="secteurs" className="py-24 px-6 bg-gray-50">
+      <section id="secteurs" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-14">
             <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
@@ -227,8 +362,8 @@ export default function Home() {
                 title: "Administrations publiques",
                 items: [
                   "Digitalisation des services publics",
-                  "Plateformes nationales de données",
-                  "Cybersécurité gouvernementale",
+                  "Plateformes de données",
+                  "Cybersécurité des administrations",
                   "Interopérabilité des systèmes",
                 ],
               },
@@ -262,7 +397,7 @@ export default function Home() {
       </section>
 
       {/* APPROCHE */}
-      <section id="approche" className="py-24 px-6">
+      <section id="approche" className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-14">
             <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
@@ -280,7 +415,7 @@ export default function Home() {
               },
               {
                 n: "02",
-                title: "Cadrage stratégique",
+                title: "Cadrage",
                 desc: "Architecture cible, feuille de route et indicateurs de succès définis avec vous.",
               },
               {
@@ -297,12 +432,12 @@ export default function Home() {
               <div key={step.n} className="relative pl-0">
                 <p
                   className="text-6xl font-black mb-4"
-                  style={{ color: "#f1f5f9", lineHeight: 1 }}
+                  style={{ color: "#e2e8f0", lineHeight: 1 }}
                 >
                   {step.n}
                 </p>
                 <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -322,10 +457,11 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white mt-3">
               Une structure nouvelle, une équipe expérimentée
             </h2>
-            <p className="text-gray-400 mt-4 leading-relaxed">
-              Amani Technologies est une ESN portée par des consultants seniors
-              ayant exercé dans des banques, des institutions publiques et des projets financés
-              par des bailleurs internationaux.
+            <p className="text-gray-300 mt-4 leading-relaxed">
+              Amani est une structure nouvelle portée par des professionnels
+              expérimentés. Nous privilégions des premières missions ciblées, avec un
+              périmètre clair et des résultats mesurables avant tout déploiement plus
+              large.
             </p>
           </div>
 
@@ -337,11 +473,11 @@ export default function Home() {
               },
               {
                 title: "Connaissance du contexte local",
-                desc: "Nous comprenons les contraintes réglementaires, organisationnelles et techniques propres à l'Afrique.",
+                desc: "Nous comprenons les contraintes réglementaires, organisationnelles et techniques propres à l'Afrique francophone.",
               },
               {
                 title: "Approche partenariale",
-                desc: "Nous construisons des relations de long terme, pas des interventions ponctuelles. Votre réussite construit aussi la nôtre.",
+                desc: "Nous construisons des relations de long terme, avec un transfert de compétences vers vos équipes à chaque mission.",
               },
             ].map((card) => (
               <div
@@ -349,37 +485,112 @@ export default function Home() {
                 className="p-7 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
               >
                 <h3 className="font-semibold text-white mb-3">{card.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{card.desc}</p>
+                <p className="text-sm text-gray-300 leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="contact" className="py-28 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
+      {/* CONTACT */}
+      <section id="contact" className="py-28 px-6">
+        <div className="max-w-3xl mx-auto text-center">
           <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
             Travaillons ensemble
           </span>
           <h2 className="text-4xl font-bold text-gray-900 mt-4 mb-5">
-            Un projet en tête ?
+            Parlons de votre besoin
           </h2>
-          <p className="text-gray-500 text-lg mb-10">
-            Nous sommes au début de notre aventure, et c&apos;est exactement pour ça que
-            nous cherchons des clients prêts à construire avec nous. Partagez-nous votre
-            contexte — nous vous répondons sous 48h.
+          <p className="text-gray-600 text-lg mb-10">
+            Un échange de 30 minutes suffit pour savoir si une formation, un
+            diagnostic ou un POC est la bonne première étape. Nous répondons sous 48 h.
           </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            <a
+              href={MAILTO_ECHANGE}
+              className="inline-block px-7 py-4 rounded-xl text-sm font-semibold text-white hover:opacity-90 transition"
+              style={{ background: "linear-gradient(135deg, #1d4ed8, #059669)" }}
+            >
+              Échanger 30 minutes sur votre besoin
+            </a>
+            <a
+              href="#formations"
+              className="inline-block px-7 py-4 rounded-xl text-sm font-semibold border border-gray-200 bg-white hover:border-gray-400 transition"
+            >
+              Découvrir nos formations IA &amp; cybersécurité
+            </a>
+          </div>
           <a
-            href="mailto:contact@amani-technologies.com"
-            className="inline-block px-8 py-4 rounded-xl text-sm font-semibold text-white hover:opacity-90 transition"
-            style={{ background: "linear-gradient(135deg, #1d4ed8, #059669)" }}
+            href={MAILTO_DIAGNOSTIC}
+            className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
           >
-            Nous écrire →
+            Ou demander un diagnostic exploratoire →
           </a>
+
+          <ContactDetails />
         </div>
       </section>
 
     </main>
+  )
+}
+
+// TODO: numéros WhatsApp réels au format international (ex. 221771234567)
+const WHATSAPP_MOHAMED = ""
+const WHATSAPP_ALIOUNE = ""
+const WA_TEXT = encodeURIComponent(
+  "Bonjour, je vous contacte au sujet d'Amani Technologies."
+)
+
+function ContactDetails() {
+  const contacts: { nom: string; role: string; wa: string }[] = [
+    { nom: "Mohamed Macalou", role: "Data & IA", wa: WHATSAPP_MOHAMED },
+    { nom: "Alioune Pouye", role: "Business Intelligence", wa: WHATSAPP_ALIOUNE },
+  ]
+
+  return (
+    <div className="mt-14 grid sm:grid-cols-2 gap-6 text-left">
+      <div className="p-6 rounded-2xl border border-gray-100 bg-gray-50">
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
+          Vos interlocuteurs
+        </p>
+        <ul className="space-y-3 text-sm text-gray-700">
+          {contacts.map((c) => (
+            <li key={c.nom}>
+              <span className="font-semibold text-gray-900">{c.nom}</span>
+              <span className="text-gray-500"> · {c.role}</span>
+              {c.wa && (
+                <>
+                  {" — "}
+                  <a
+                    href={`https://wa.me/${c.wa}?text=${WA_TEXT}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-emerald-700 hover:text-emerald-800 transition"
+                  >
+                    WhatsApp
+                  </a>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="p-6 rounded-2xl border border-gray-100 bg-gray-50">
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
+          Coordonnées
+        </p>
+        <ul className="space-y-2 text-sm text-gray-700">
+          <li>
+            <a href={`mailto:${MAIL}`} className="hover:text-gray-900 transition">
+              {MAIL}
+            </a>
+          </li>
+          <li>Réponse sous 48 h</li>
+          <li>Dakar · Afrique francophone &amp; Europe</li>
+        </ul>
+      </div>
+    </div>
   )
 }
