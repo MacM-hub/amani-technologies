@@ -24,6 +24,13 @@
 .DS_Store
 *.pem
 
+# documents de travail internes (non publiés)
+/audit-site-amani.txt
+/mini-cas.txt
+/references.txt
+/ovh.txt
+/*.pdf
+
 # debug
 npm-debug.log*
 yarn-debug.log*
