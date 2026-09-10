@@ -540,17 +540,16 @@ export default function Home() {
   )
 }
 
-// TODO: numéros WhatsApp réels au format international (ex. 221771234567)
-const WHATSAPP_MOHAMED = ""
-const WHATSAPP_ALIOUNE = ""
+// Numéro WhatsApp général d'Amani (format international sans "+")
+const WHATSAPP = "221773339889"
 const WA_TEXT = encodeURIComponent(
   "Bonjour, je vous contacte au sujet d'Amani Technologies."
 )
 
 function ContactDetails() {
-  const contacts: { nom: string; role: string; wa: string }[] = [
-    { nom: "Mohamed Macalou", role: "Data & IA", wa: WHATSAPP_MOHAMED },
-    { nom: "Alioune Pouye", role: "Business Intelligence", wa: WHATSAPP_ALIOUNE },
+  const interlocuteurs = [
+    { nom: "Mohamed Macalou", role: "Data & IA" },
+    { nom: "Alioune Pouye", role: "Business Intelligence" },
   ]
 
   return (
@@ -559,24 +558,11 @@ function ContactDetails() {
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
           Vos interlocuteurs
         </p>
-        <ul className="space-y-3 text-sm text-gray-700">
-          {contacts.map((c) => (
+        <ul className="space-y-2 text-sm text-gray-700">
+          {interlocuteurs.map((c) => (
             <li key={c.nom}>
               <span className="font-semibold text-gray-900">{c.nom}</span>
               <span className="text-gray-500"> · {c.role}</span>
-              {c.wa && (
-                <>
-                  {" — "}
-                  <a
-                    href={`https://wa.me/${c.wa}?text=${WA_TEXT}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-emerald-700 hover:text-emerald-800 transition"
-                  >
-                    WhatsApp
-                  </a>
-                </>
-              )}
             </li>
           ))}
         </ul>
@@ -589,6 +575,16 @@ function ContactDetails() {
           <li>
             <a href={`mailto:${MAIL}`} className="hover:text-gray-900 transition">
               {MAIL}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`https://wa.me/${WHATSAPP}?text=${WA_TEXT}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-emerald-700 hover:text-emerald-800 transition"
+            >
+              Nous écrire sur WhatsApp
             </a>
           </li>
           <li>Réponse sous 48 h</li>
