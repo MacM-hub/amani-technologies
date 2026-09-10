@@ -14,12 +14,11 @@ const INFOS = {
     "Société par Actions Simplifiée (SAS) régie par l'Acte Uniforme OHADA relatif au droit des sociétés commerciales et du GIE",
   capital: "1 000 000 FCFA",
   siege: "Hann Maristes, Cité Ady Niang, Villa N°16, Dakar (Sénégal)",
-  // TODO: numéros d'immatriculation à compléter (laissés vides = ligne masquée)
-  rccm: "",
-  ninea: "",
+  rccm: "SN DKR 2026 B 17175",
+  ninea: "013044805",
   president: "Alioune Pouye",
   directeurGeneral: "Mohamed Macalou",
-  directeurPublication: "Adja Pouye",
+  directeurPublication: "Alioune Pouye, en qualité de Président",
   notaire:
     "Acte reçu le 28 avril 2026 par Maître Baye Mapaté Wilane Diouck, notaire à Dakar (SCP Notaires Associés Diop, Diouck & Faye)",
   email: "contact@amani-technologies.com",
@@ -64,7 +63,7 @@ export default function MentionsLegales() {
         </section>
 
         <section className="space-y-2 mb-10">
-          <h2 className="text-lg font-semibold text-gray-900">Directrice de la publication</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Directeur de la publication</h2>
           <p className="text-sm text-gray-600 leading-relaxed">
             {INFOS.directeurPublication}
           </p>

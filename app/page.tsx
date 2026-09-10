@@ -555,7 +555,7 @@ function ContactDetails() {
         </p>
         <p className="text-sm text-gray-700">
           <span className="font-semibold text-gray-900">Adja Pouye</span>
-          <span className="text-gray-500"> · relation clients</span>
+          <span className="text-gray-500"> · développement commercial — Sénégal</span>
         </p>
       </div>
       <div className="p-6 rounded-2xl border border-gray-100 bg-gray-50">

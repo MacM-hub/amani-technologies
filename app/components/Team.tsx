@@ -16,9 +16,9 @@ const MEMBRES = [
     lien: null,
   },
   {
-    nom: "Mohamed Moustapha Cissé",
-    role: "Audit & conformité",
-    bio: "Vice-président et co-fondateur du cabinet Auditec Fiduciaire. Audit financier, contrôle interne et conformité réglementaire.",
+    nom: "Mohamed Moustapha Sidibé",
+    role: "Vice-président · Audit & conformité",
+    bio: "Expert-comptable, co-fondateur du cabinet Auditec Fiduciaire. Audit financier, contrôle interne et conformité réglementaire.",
     lien: {
       href: "https://auditecfiduciaire.com/a-propos-de-nous/",
       label: "auditecfiduciaire.com",
