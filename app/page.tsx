@@ -1,9 +1,8 @@
 import Team from "./components/Team"
 
-// TODO: remplacer par les vraies URL des brochures (à déposer dans /public)
 const BROCHURE_IA = "/brochure-formation-ia.pdf"
 const BROCHURE_CYBER = "/brochure-formation-cybersecurite.pdf"
-const BROCHURES_PRETES = false
+const BROCHURES_PRETES = true
 
 const MAIL = "contact@amani-technologies.com"
 const MAILTO_ECHANGE = `mailto:${MAIL}?subject=${encodeURIComponent(
@@ -215,22 +214,27 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Intelligence artificielle — niveau 1",
-                desc: "Comprendre ce que l'IA générative change concrètement pour votre organisation : cas d'usage réalistes, limites, risques, premiers réflexes de gouvernance.",
-                public: "Dirigeants, cadres, équipes métier",
-                format: "Atelier ½ à 1 journée · sur site ou à distance",
+                tag: "Formation IA · Niveau 1",
+                title: "IA maîtrisée au service de la productivité",
+                desc: "Tirer parti de l'IA générative au quotidien sans jamais exposer les données de l'entreprise : cas d'usage par métier, bases du prompt, données à ne jamais confier, menaces assistées par IA.",
+                public: "Tous collaborateurs, sans prérequis technique",
+                format: "1 journée (7 h) ou 2 demi-journées · présentiel ou distanciel",
                 href: BROCHURE_IA,
               },
               {
-                title: "Cybersécurité — niveau 1",
-                desc: "Les fondamentaux pour réduire l'exposition au risque : hygiène numérique, phishing, gestion des accès, sauvegardes, réaction en cas d'incident.",
-                public: "Dirigeants, cadres, équipes métier",
-                format: "Atelier ½ à 1 journée · sur site ou à distance",
+                tag: "Formation Cybersécurité · Niveau 1",
+                title: "Cyber Vigilance",
+                desc: "Faire de chaque collaborateur le premier rempart contre les ransomwares et l'ingénierie sociale : reconnaître le phishing, hygiène numérique, MFA, bons réflexes en cas d'incident.",
+                public: "Tous collaborateurs, sans prérequis technique",
+                format: "1 journée (7 h) ou 2 demi-journées · présentiel ou distanciel",
                 href: BROCHURE_CYBER,
               },
             ].map((f) => (
               <div key={f.title} className="p-8 rounded-2xl border border-gray-100 hover:shadow-md transition">
-                <h3 className="text-lg font-semibold mb-3">{f.title}</h3>
+                <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
+                  {f.tag}
+                </span>
+                <h3 className="text-lg font-semibold mt-2 mb-3">{f.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-5">{f.desc}</p>
                 <dl className="text-sm text-gray-600 space-y-1.5 mb-6">
                   <div className="flex gap-2">

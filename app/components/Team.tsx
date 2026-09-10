@@ -26,14 +26,18 @@ const MEMBRES = [
   },
 ]
 
-// TODO-confirm : n'afficher que les compétences / certifications réellement détenues.
-const COMPETENCES = [
-  "Architecture SI & urbanisation",
+const CERTIFICATIONS = [
+  "ISO/IEC 27001 Lead Auditor",
+  "Google Cybersecurity Professional",
+  "AWS Certified Data Engineer – Associate",
+  "AWS Certified Solutions Architect – Associate",
+]
+
+const DOMAINES = [
+  "Architecture SI & cloud",
   "Business Intelligence & data",
   "Data engineering & IA / RAG",
-  "Audit & conformité (ISO 27001)",
-  "Cloud (AWS)",
-  "Bases de données (Oracle)",
+  "Audit, gouvernance & conformité",
 ]
 
 export default function Team() {
@@ -77,20 +81,37 @@ export default function Team() {
           ))}
         </div>
 
-        {/* Compétences */}
-        <div className="mb-16">
-          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
-            Compétences &amp; certifications
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {COMPETENCES.map((c) => (
-              <span
-                key={c}
-                className="text-sm px-3 py-1.5 rounded-full border border-gray-200 text-gray-700 bg-white"
-              >
-                {c}
-              </span>
-            ))}
+        {/* Certifications & domaines */}
+        <div className="mb-16 grid md:grid-cols-2 gap-10">
+          <div>
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
+              Certifications
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {CERTIFICATIONS.map((c) => (
+                <span
+                  key={c}
+                  className="text-sm px-3 py-1.5 rounded-full border border-blue-100 text-blue-800 bg-blue-50"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
+              Domaines d&apos;expertise
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {DOMAINES.map((c) => (
+                <span
+                  key={c}
+                  className="text-sm px-3 py-1.5 rounded-full border border-gray-200 text-gray-700 bg-white"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
