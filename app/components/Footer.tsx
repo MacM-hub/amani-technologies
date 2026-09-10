@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -16,17 +17,20 @@ export default function Footer() {
             height={123}
             className="h-12 w-auto object-contain mb-2"
           />
-          <p className="text-sm text-gray-500 leading-relaxed">
-            Cabinet de conseil en transformation numérique.
+          <p className="text-sm text-gray-600 leading-relaxed">
+            Conseil en IA, cybersécurité et systèmes d&apos;information.
+            <br />
+            Dakar · Afrique francophone &amp; Europe
           </p>
         </div>
 
         {/* Navigation */}
         <div>
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Navigation</p>
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">Navigation</p>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li><a href="#expertise" className="hover:text-gray-900 transition">Expertise</a></li>
-            <li><a href="#secteurs" className="hover:text-gray-900 transition">Secteurs</a></li>
+            <li><a href="#offres" className="hover:text-gray-900 transition">Offres</a></li>
+            <li><a href="#formations" className="hover:text-gray-900 transition">Formations</a></li>
+            <li><a href="#equipe" className="hover:text-gray-900 transition">Équipe</a></li>
             <li><a href="#approche" className="hover:text-gray-900 transition">Approche</a></li>
             <li><a href="#contact" className="hover:text-gray-900 transition">Contact</a></li>
           </ul>
@@ -34,12 +38,17 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Contact</p>
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">Contact</p>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>
               <a href="mailto:contact@amani-technologies.com" className="hover:text-gray-900 transition">
                 contact@amani-technologies.com
               </a>
+            </li>
+            <li>
+              <Link href="/mentions-legales" className="hover:text-gray-900 transition">
+                Mentions légales
+              </Link>
             </li>
             <li>
               <a
@@ -56,7 +65,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-gray-100 text-xs text-gray-400 text-center">
+      <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-gray-100 text-xs text-gray-500 text-center">
         © {year} Amani Technologies. Tous droits réservés.
       </div>
     </footer>

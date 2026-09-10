@@ -7,8 +7,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   const links = [
-    { label: "Expertise", href: "#expertise" },
-    { label: "Secteurs", href: "#secteurs" },
+    { label: "Offres", href: "#offres" },
+    { label: "Formations", href: "#formations" },
+    { label: "Équipe", href: "#equipe" },
     { label: "Approche", href: "#approche" },
   ]
 
@@ -42,14 +43,16 @@ export default function Navbar() {
             className="hidden md:inline-block px-4 py-2 rounded-lg text-sm font-semibold text-white transition hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #1d4ed8, #059669)" }}
           >
-            Nous contacter
+            Échanger 30 min
           </a>
 
           {/* Burger mobile */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
             onClick={() => setOpen(!open)}
-            aria-label="Menu"
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             <div className="w-5 space-y-1">
               <span className={`block h-0.5 bg-gray-800 transition-all ${open ? "rotate-45 translate-y-1.5" : ""}`} />
@@ -62,7 +65,7 @@ export default function Navbar() {
 
       {/* Menu mobile déroulant */}
       {open && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+        <div id="mobile-menu" className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
           {links.map((l) => (
             <a
               key={l.label}
@@ -78,7 +81,7 @@ export default function Navbar() {
             className="block text-sm font-semibold text-blue-600 py-1"
             onClick={() => setOpen(false)}
           >
-            Nous contacter →
+            Échanger 30 min →
           </a>
         </div>
       )}
