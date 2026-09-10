@@ -11,8 +11,8 @@ const MEMBRES = [
   },
   {
     nom: "Mohamed Macalou",
-    role: "Data Architect · Intelligence artificielle",
-    bio: "Architecture data et IA pour des opérateurs télécoms sur trois continents : Orange Belgium, SFR, O2 (Royaume-Uni), STC (Arabie saoudite), Maroc Telecom, Safaricom (Kenya), Verizon (États-Unis), Singtel (Singapour).",
+    role: "Directeur général · Data & Intelligence artificielle",
+    bio: "15+ ans en développement logiciel, administration de bases de données et support de niveau 3. Architecture data et IA pour des opérateurs télécoms sur trois continents : Orange Belgium, SFR, O2 (Royaume-Uni), STC (Arabie saoudite), Maroc Telecom, Safaricom (Kenya), Verizon (États-Unis), Singtel (Singapour).",
     lien: null,
   },
   {
