@@ -8,16 +8,22 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-// TODO: compléter avec les informations juridiques définitives
-// (forme juridique, capital, RCCM, NINEA, siège, gérant / directeur de la publication).
 const INFOS = {
-  raisonSociale: "Amani Technologies",
-  formeJuridique: "SARL en cours de constitution", // TODO à confirmer
-  siege: "Dakar, Sénégal", // TODO adresse complète
-  rccm: "—", // TODO
-  ninea: "—", // TODO
-  directeurPublication: "—", // TODO
+  denomination: "AMANI TECHNOLOGIES",
+  forme:
+    "Société par Actions Simplifiée (SAS) régie par l'Acte Uniforme OHADA relatif au droit des sociétés commerciales et du GIE",
+  capital: "1 000 000 FCFA",
+  siege: "Hann Maristes, Cité Ady Niang, Villa N°16, Dakar (Sénégal)",
+  // TODO: numéros d'immatriculation à compléter (laissés vides = ligne masquée)
+  rccm: "",
+  ninea: "",
+  president: "Alioune Pouye",
+  directeurGeneral: "Mohamed Macalou",
+  directeurPublication: "Adja Pouye",
+  notaire:
+    "Acte reçu le 28 avril 2026 par Maître Baye Mapaté Wilane Diouck, notaire à Dakar (SCP Notaires Associés Diop, Diouck & Faye)",
   email: "contact@amani-technologies.com",
+  whatsapp: "+221 77 333 98 89",
 }
 
 export default function MentionsLegales() {
@@ -33,18 +39,45 @@ export default function MentionsLegales() {
         <section className="space-y-2 mb-10">
           <h2 className="text-lg font-semibold text-gray-900">Éditeur du site</h2>
           <p className="text-sm text-gray-600 leading-relaxed">
-            {INFOS.raisonSociale} — {INFOS.formeJuridique}
+            {INFOS.denomination} — {INFOS.forme}
             <br />
-            Siège : {INFOS.siege}
+            Capital social : {INFOS.capital}
             <br />
-            RCCM : {INFOS.rccm} · NINEA : {INFOS.ninea}
+            Siège social : {INFOS.siege}
+            {INFOS.rccm && (
+              <>
+                <br />
+                RCCM : {INFOS.rccm}
+              </>
+            )}
+            {INFOS.ninea && (
+              <>
+                <br />
+                NINEA : {INFOS.ninea}
+              </>
+            )}
             <br />
-            Directeur de la publication : {INFOS.directeurPublication}
+            Président : {INFOS.president} · Directeur général : {INFOS.directeurGeneral}
             <br />
-            Contact :{" "}
+            {INFOS.notaire}
+          </p>
+        </section>
+
+        <section className="space-y-2 mb-10">
+          <h2 className="text-lg font-semibold text-gray-900">Directrice de la publication</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            {INFOS.directeurPublication}
+          </p>
+        </section>
+
+        <section className="space-y-2 mb-10">
+          <h2 className="text-lg font-semibold text-gray-900">Contact</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">
             <a href={`mailto:${INFOS.email}`} className="text-blue-600 hover:text-blue-700 transition">
               {INFOS.email}
             </a>
+            <br />
+            WhatsApp : {INFOS.whatsapp}
           </p>
         </section>
 
@@ -61,7 +94,7 @@ export default function MentionsLegales() {
           <p className="text-sm text-gray-600 leading-relaxed">
             L&apos;ensemble des contenus de ce site (textes, éléments graphiques, logo)
             est la propriété d&apos;Amani Technologies, sauf mention contraire. Toute
-            reproduction sans autorisation est interdite.
+            reproduction sans autorisation préalable est interdite.
           </p>
         </section>
 

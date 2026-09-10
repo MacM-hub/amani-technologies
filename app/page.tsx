@@ -547,25 +547,16 @@ const WA_TEXT = encodeURIComponent(
 )
 
 function ContactDetails() {
-  const interlocuteurs = [
-    { nom: "Mohamed Macalou", role: "Data & IA" },
-    { nom: "Alioune Pouye", role: "Business Intelligence" },
-  ]
-
   return (
     <div className="mt-14 grid sm:grid-cols-2 gap-6 text-left">
       <div className="p-6 rounded-2xl border border-gray-100 bg-gray-50">
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
-          Vos interlocuteurs
+          Votre interlocutrice
         </p>
-        <ul className="space-y-2 text-sm text-gray-700">
-          {interlocuteurs.map((c) => (
-            <li key={c.nom}>
-              <span className="font-semibold text-gray-900">{c.nom}</span>
-              <span className="text-gray-500"> · {c.role}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-gray-900">Adja Pouye</span>
+          <span className="text-gray-500"> · relation clients</span>
+        </p>
       </div>
       <div className="p-6 rounded-2xl border border-gray-100 bg-gray-50">
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
