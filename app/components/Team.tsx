@@ -6,31 +6,32 @@ const MEMBRES = [
   {
     nom: "Alioune Pouye",
     role: "Président · Consultant Business Intelligence",
-    bio: "15+ ans en Business Intelligence et pilotage de la donnée. A conduit des missions pour de grands comptes en Europe : RATP, Orange, BNP Paribas Assurance, Manpower, APEC, Airbus.",
+    bio: "20 ans d'expérience en Business Intelligence, pilotage de la donnée et contrôle de gestion. A conduit des missions pour de grands comptes en Europe : RATP, Orange, BNP Paribas Assurance, Manpower, APEC, Airbus.",
+    certs: [] as string[],
     lien: null as { href: string; label: string } | null,
   },
   {
     nom: "Mohamed Macalou",
     role: "Directeur général · Data & Intelligence artificielle",
-    bio: "15+ ans en développement logiciel, administration de bases de données et support de niveau 3. Architecture data et IA pour des opérateurs télécoms sur trois continents : Orange Belgium, SFR, O2 (Royaume-Uni), STC (Arabie saoudite), Maroc Telecom, Safaricom (Kenya), Verizon (États-Unis), Singtel (Singapour).",
+    bio: "20 ans d'expérience dans le domaine des technologies de l'information : développement logiciel, administration de bases de données et support de niveau 3. Architecture data et IA pour des opérateurs télécoms sur trois continents : Orange Belgium, SFR, O2 (Royaume-Uni), STC (Arabie saoudite), Maroc Telecom, Safaricom (Kenya), Verizon (États-Unis), Singtel (Singapour).",
+    certs: [
+      "ISO/IEC 27001 Lead Auditor",
+      "Google Cybersecurity Professional",
+      "AWS Certified Data Engineer – Associate",
+      "AWS Certified Solutions Architect – Associate",
+    ],
     lien: null,
   },
   {
     nom: "Mohamed Moustapha Sidibé",
     role: "Vice-président · Audit & conformité",
     bio: "Expert-comptable, co-fondateur du cabinet Auditec Fiduciaire. Audit financier, contrôle interne et conformité réglementaire.",
+    certs: [] as string[],
     lien: {
       href: "https://auditecfiduciaire.com/a-propos-de-nous/",
       label: "auditecfiduciaire.com",
     },
   },
-]
-
-const CERTIFICATIONS = [
-  "ISO/IEC 27001 Lead Auditor",
-  "Google Cybersecurity Professional",
-  "AWS Certified Data Engineer – Associate",
-  "AWS Certified Solutions Architect – Associate",
 ]
 
 const DOMAINES = [
@@ -67,6 +68,18 @@ export default function Team() {
               <h3 className="text-lg font-semibold text-gray-900">{m.nom}</h3>
               <p className="text-sm font-medium text-blue-600 mt-1 mb-4">{m.role}</p>
               <p className="text-sm text-gray-600 leading-relaxed">{m.bio}</p>
+              {m.certs.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-4">
+                  {m.certs.map((c) => (
+                    <span
+                      key={c}
+                      className="text-xs px-2.5 py-1 rounded-full border border-blue-100 text-blue-800 bg-blue-50"
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              )}
               {m.lien && (
                 <a
                   href={m.lien.href}
@@ -81,37 +94,20 @@ export default function Team() {
           ))}
         </div>
 
-        {/* Certifications & domaines */}
-        <div className="mb-16 grid md:grid-cols-2 gap-10">
-          <div>
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
-              Certifications
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {CERTIFICATIONS.map((c) => (
-                <span
-                  key={c}
-                  className="text-sm px-3 py-1.5 rounded-full border border-blue-100 text-blue-800 bg-blue-50"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
-              Domaines d&apos;expertise
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {DOMAINES.map((c) => (
-                <span
-                  key={c}
-                  className="text-sm px-3 py-1.5 rounded-full border border-gray-200 text-gray-700 bg-white"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
+        {/* Domaines d'expertise */}
+        <div className="mb-16">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">
+            Domaines d&apos;expertise
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {DOMAINES.map((c) => (
+              <span
+                key={c}
+                className="text-sm px-3 py-1.5 rounded-full border border-gray-200 text-gray-700 bg-white"
+              >
+                {c}
+              </span>
+            ))}
           </div>
         </div>
 

@@ -97,13 +97,23 @@ export default function MentionsLegales() {
           </p>
         </section>
 
-        <section className="space-y-2">
+        <section id="donnees-personnelles" className="space-y-2">
           <h2 className="text-lg font-semibold text-gray-900">Données personnelles</h2>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Ce site ne comporte pas de formulaire de collecte ni de cookies marketing.
-            Les échanges se font par e-mail ou messagerie à l&apos;initiative du visiteur ;
-            les informations transmises ne sont utilisées que pour répondre à la demande.
-            Pour toute question :{" "}
+            Ce site ne dépose pas de cookies marketing. Il comporte un seul formulaire :
+            le téléchargement du catalogue de formation, qui demande votre nom, votre
+            société et votre adresse e-mail. Ces informations sont collectées via Netlify
+            Forms et utilisées uniquement pour répondre à votre demande (envoi d&apos;informations
+            sur nos formations, prise de contact) — elles ne sont ni revendues ni transmises
+            à des tiers à des fins commerciales.
+            <br />
+            En dehors de ce formulaire, les échanges se font par e-mail ou messagerie à
+            l&apos;initiative du visiteur ; les informations transmises ne sont utilisées
+            que pour répondre à la demande.
+            <br />
+            Conformément à la réglementation applicable, vous disposez d&apos;un droit
+            d&apos;accès, de rectification et de suppression de vos données. Pour l&apos;exercer
+            ou pour toute question :{" "}
             <a href={`mailto:${INFOS.email}`} className="text-blue-600 hover:text-blue-700 transition">
               {INFOS.email}
             </a>
