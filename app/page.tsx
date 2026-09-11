@@ -1,8 +1,8 @@
 import Team from "./components/Team"
+import BrochureForm from "./components/BrochureForm"
 
 const BROCHURE_IA = "/brochure-formation-ia.pdf"
 const BROCHURE_CYBER = "/brochure-formation-cybersecurite.pdf"
-const BROCHURES_PRETES = true
 
 const MAIL = "contact@amani-technologies.com"
 const MAILTO_ECHANGE = `mailto:${MAIL}?subject=${encodeURIComponent(
@@ -220,6 +220,7 @@ export default function Home() {
                 public: "Tous collaborateurs, sans prérequis technique",
                 format: "1 journée (7 h) ou 2 demi-journées · présentiel ou distanciel",
                 href: BROCHURE_IA,
+                formation: "IA — Niveau 1",
               },
               {
                 tag: "Formation Cybersécurité · Niveau 1",
@@ -228,6 +229,7 @@ export default function Home() {
                 public: "Tous collaborateurs, sans prérequis technique",
                 format: "1 journée (7 h) ou 2 demi-journées · présentiel ou distanciel",
                 href: BROCHURE_CYBER,
+                formation: "Cybersécurité — Niveau 1",
               },
             ].map((f) => (
               <div key={f.title} className="p-8 rounded-2xl border border-gray-100 hover:shadow-md transition">
@@ -246,23 +248,11 @@ export default function Home() {
                     <dd>{f.format}</dd>
                   </div>
                 </dl>
-                {BROCHURES_PRETES ? (
-                  <a
-                    href={f.href}
-                    className="inline-block text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Télécharger la brochure (PDF) →
-                  </a>
-                ) : (
-                  <a
-                    href={MAILTO_ECHANGE}
-                    className="inline-block text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
-                  >
-                    Brochure détaillée sur demande →
-                  </a>
-                )}
+                <BrochureForm
+                  href={f.href}
+                  formation={f.formation}
+                  label="Télécharger la brochure (PDF) →"
+                />
               </div>
             ))}
           </div>
@@ -535,6 +525,21 @@ export default function Home() {
           <ContactDetails />
         </div>
       </section>
+
+      {/*
+        Formulaire statique caché : nécessaire pour que Netlify détecte le
+        formulaire "brochure-catalogue" au build (Netlify Forms scanne le
+        HTML généré). Les champs doivent correspondre exactement à ceux du
+        formulaire réel dans components/BrochureForm.tsx.
+      */}
+      <form name="brochure-catalogue" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="brochure-catalogue" />
+        <input name="formation" />
+        <input name="nom" />
+        <input name="societe" />
+        <input type="email" name="email" />
+        <input name="bot-field" />
+      </form>
 
     </main>
   )

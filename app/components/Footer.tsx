@@ -52,7 +52,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/amani-technologies-2a791040a/"
+                href="https://www.linkedin.com/company/146501988"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-900 transition"
